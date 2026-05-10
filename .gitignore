@@ -1,0 +1,7 @@
+.vs/
+.idea/
+*.user
+*.suo
+*.csproj.user
+.DS_Store
+Thumbs.db
