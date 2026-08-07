@@ -1,0 +1,28 @@
+title: CHAPPiE
+description: Competition drift judging for CarX Drift Racing Online — mod and track-authoring SDK
+url: https://chappie.online
+
+# Jekyll theme shipped with GitHub Pages. Swap for a custom theme later; the
+# markdown in this folder is theme-agnostic.
+theme: jekyll-theme-cayman
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Only the docs folder is published. Everything else in the repo is source.
+include:
+  - reference
+  - tutorials
+  - visuals
+
+exclude:
+  - tools
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
