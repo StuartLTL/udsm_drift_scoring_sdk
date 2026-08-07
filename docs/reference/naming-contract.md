@@ -110,7 +110,17 @@ The usual thresholds then apply: two wheels off for 0.15 s is a DQ, one wheel of
 
 **Place these over paved run-off, escape roads and paved infield** — anywhere going wide should be punished but the material won't say so. You don't need them over grass or dirt.
 
-Containment is tested against the mesh in its own local space, so a rotated mesh marks the strip you actually modelled rather than a world-aligned box around it. The mesh needs readable geometry; if it has none the mod logs that it's being skipped rather than failing silently.
+### Build them like your zone meshes
+
+Containment is tested against the mesh in its own local space, so a mesh rotated in the ground plane marks the strip you actually modelled rather than a world-aligned box around it. Two constraints come with that, and they're the same ones `overshoot_` meshes already have:
+
+**The mesh's local Y must be its up axis.** The test is generous vertically (−2 m to +4 m, to absorb the gap between a wheel's centre and the ground) and exact across X and Z. A wheel roughly 0.3 m above the surface has to land in that vertical window. If the mesh is rotated so its local Y is no longer vertical — a Unity **Quad** laid flat is the usual way this happens — that 0.3 m falls along an axis with no tolerance and the wheel reads as outside. Use a box-like mesh with Y up.
+
+**Don't flatten it by scaling Y toward zero.** The tolerance is measured in local units, so it shrinks with the scale. At `scale.y = 0.01` the ±4 m window becomes ±4 cm and a wheel sitting right on the mesh is outside it. Give the mesh real thickness — half a metre is plenty — and leave Y scale near 1.
+
+A cube primitive, scaled in X and Z to cover the area and left alone in Y, does the right thing. So does anything exported from Maya or Blender as a slab.
+
+The mesh also needs readable geometry (`MeshFilter` or `MeshCollider`). If it has none, the mod logs that it's being skipped rather than failing silently — check `debug.log` if a marker seems to do nothing.
 
 > Before v1.9.2 this prefix was parsed only on a fallback path that never ran in practice, so placing these meshes did nothing. If you authored a map against that behaviour and put `offtrack_` meshes somewhere merely decorative, they will now DQ people. `RespectOffTrackMeshes: false` in `config.json` turns the check off while you fix the map.
 
