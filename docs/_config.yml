@@ -1,28 +1,35 @@
 title: CHAPPiE
-description: Competition drift judging for CarX Drift Racing Online — mod and track-authoring SDK
+description: Competition drift judging for CarX Drift Racing Online
 url: https://chappie.online
 
-# Jekyll theme shipped with GitHub Pages. Swap for a custom theme later; the
-# markdown in this folder is theme-agnostic.
-theme: jekyll-theme-cayman
+# No stock theme: the site uses its own dark layout (_layouts/default.html) and
+# stylesheet (assets/css/style.css), matched to the depth-band colours in the
+# SVG diagrams so they sit on the page instead of glaring as white boxes.
+# Same shape as asmmod.online.
 
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+# GitHub Pages enables these by default; listed for clarity:
+#   jekyll-relative-links        -> relative .md links resolve to the built pages
+#   jekyll-readme-index          -> a folder's README.md serves as its index
+#   jekyll-optional-front-matter -> plain .md files (no front matter) become pages
+#   jekyll-titles-from-headings  -> page title comes from the first heading
+plugins:
+  - jekyll-relative-links
+  - jekyll-readme-index
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
 
-# Only the docs folder is published. Everything else in the repo is source.
-include:
-  - reference
-  - tutorials
-  - visuals
+relative_links:
+  enabled: true
+  collections: false
 
-exclude:
-  - tools
-  - README.md
-
+# Apply the dark layout to every page (our .md files carry no front matter).
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

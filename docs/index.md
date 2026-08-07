@@ -1,21 +1,23 @@
-# CHAPPiE
+# Judge a drift run the way a panel would
 
-Competition drift judging for **CarX Drift Racing Online**, built on KSL (Kino Script Loader).
+**CHAPPiE** scores runs in **CarX Drift Racing Online** against zones *you* define in your own map — line depth, angle, consistency and style — and runs the whole session around it: host-controlled qualifying, a live lobby scoreboard, judge review, retroactive DQ and a CSV results sheet.
 
-CHAPPiE scores a run the way a judging panel does — line, angle, consistency and style — against zones the track author defines in their own map. It runs a full qualifying session: host-controlled runs, a live lobby scoreboard, judge review, retroactive DQ, and a CSV results sheet.
+You don't script anything. You split a zone into a grid of invisible meshes, name them, and the mod scores whatever it finds.
+
+![How a zone is split into length steps and depth bands](visuals/depth-grid.svg)
 
 ---
 
-## I want to…
+## Start here
 
 | | |
 |---|---|
-| **Drive on a CHAPPiE track** | [Install the mod](getting-started.md) |
-| **Build a track that CHAPPiE can score** | [Track authoring guide](tutorials/) |
-| **Look up a GameObject name** | [Naming contract](reference/naming-contract.md) |
-| **Understand how a score is calculated** | [Scoring model](reference/scoring-model.md) |
-| **Know what gets you DQ'd** | [DQ and deduction rules](reference/dq-rules.md) |
-| **Read the SDK component reference** | [Components](reference/components.md) |
+| 🏁 **[Getting started](getting-started.md)** | Install the mod, assign staff, run a session. |
+| 🛠️ **[Track authoring](tutorials/)** | The full pipeline: design the grid, build it in Maya or Blender, set it up in Unity, export through Kino. |
+| 📐 **[Naming contract](reference/naming-contract.md)** | Every GameObject name the mod reads. The actual interface. |
+| 🧮 **[Scoring model](reference/scoring-model.md)** | How a run becomes a number. |
+| ⛔ **[DQ and deduction rules](reference/dq-rules.md)** | What zeroes or reduces a run, with every threshold. |
+| 🧩 **[SDK components](reference/components.md)** | Field-by-field Unity component reference. |
 
 ---
 

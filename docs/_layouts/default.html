@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="theme-color" content="#0f1116">
+
+<!-- social preview -->
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ '/assets/icon.png' | absolute_url }}">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="icon" href="{{ '/assets/icon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/icon.png' | relative_url }}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-mark" src="{{ '/assets/icon-128.png' | relative_url }}" alt="" width="28" height="28">
+      <span class="brand-text">CHAPPiE</span>
+    </a>
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/getting-started' | relative_url }}">Getting started</a>
+      <a href="{{ '/tutorials/' | relative_url }}">Track authoring</a>
+      <a href="{{ '/reference/' | relative_url }}">Reference</a>
+      <a class="nav-cta" href="https://github.com/StuartLTL/udsm_drift_scoring_public">Download</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-icon" src="{{ '/assets/icon.png' | relative_url }}" alt="" width="88" height="88">
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-sub">{{ site.description }}. Depth-graded line scoring against zones you author in your own map, host-controlled qualifying, live lobby scoreboard and CSV results.</p>
+    <p class="hero-chips">
+      <span class="chip chip-line">Line</span>
+      <span class="chip chip-angle">Angle</span>
+      <span class="chip chip-cons">Consistency</span>
+      <span class="chip chip-x">X-Factor</span>
+    </p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/getting-started' | relative_url }}">Get started</a>
+      <a class="btn" href="{{ '/tutorials/' | relative_url }}">Build a track</a>
+      <a class="btn btn-ghost" href="https://github.com/StuartLTL/udsm_drift_scoring_sdk">View on GitHub</a>
+    </p>
+  </div>
+</section>
+
+<main class="wrap content">
+  {{ content }}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      <a href="https://github.com/StuartLTL/udsm_drift_scoring_public">Releases</a> &middot;
+      <a href="https://github.com/StuartLTL/udsm_drift_scoring_sdk">SDK</a> &middot;
+      <a href="https://kino.tools/">KSL / Kino</a>
+    </p>
+    <p class="muted">CHAPPiE &mdash; competition drift judging for CarX Drift Racing Online. MIT licensed.</p>
+  </div>
+</footer>
+
+</body>
+</html>
