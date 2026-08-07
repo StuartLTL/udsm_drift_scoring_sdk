@@ -98,23 +98,33 @@ Sequence: panel 1 white at 3 s remaining, panels 1–2 at 2 s, panels 1–2–3 
 
 ---
 
-## Names the mod no longer acts on
+## `offtrack_{Index}` {#offtrack}
 
-Both of these are accepted in a scene and cause no errors, but **neither currently drives any behaviour**. They're documented here so you don't spend time placing them expecting an effect.
+Marks a surface as out, for the case the surface itself can't express.
 
-### `wall_{Index}`
+Off-course normally reads CarX's per-wheel `surfaceType` and counts any wheel not on `Asphalt`. That works for grass, dirt and gravel, and needs no marker at all. It cannot work for a run-off that is **itself paved** — CarX reports asphalt under every wheel there, so a driver can run arbitrarily wide onto tarmac and never trigger off-course.
+
+`offtrack_` meshes close that hole. Any wheel inside one counts as off-surface, on top of whatever the surface type says. The two signals are combined per wheel, so a car with one wheel on grass and another on a marked paved run-off counts as two wheels off, not one.
+
+The usual thresholds then apply: two wheels off for 0.15 s is a DQ, one wheel off accrues a per-second deduction.
+
+**Place these over paved run-off, escape roads and paved infield** — anywhere going wide should be punished but the material won't say so. You don't need them over grass or dirt.
+
+Containment is tested against the mesh in its own local space, so a rotated mesh marks the strip you actually modelled rather than a world-aligned box around it. The mesh needs readable geometry; if it has none the mod logs that it's being skipped rather than failing silently.
+
+> Before v1.9.2 this prefix was parsed only on a fallback path that never ran in practice, so placing these meshes did nothing. If you authored a map against that behaviour and put `offtrack_` meshes somewhere merely decorative, they will now DQ people. `RespectOffTrackMeshes: false` in `config.json` turns the check off while you fix the map.
+
+---
+
+## Names the mod does not act on {#inert-names}
+
+### `wall_{Index}` {#wall}
+
+Accepted in a scene, causes no errors, drives no behaviour.
 
 Wall contact is detected through CarX's own collision events on the car (`RaceCar.OnCollisionEnterEvent`), which fire for any solid collider. The mod explicitly skips `wall_`-prefixed objects during the scene scan — no trigger is attached, no bounds cached.
 
 **You do not need to mark walls.** Any solid barrier already registers wall taps and wall-impact DQs. Keep the marker if you use it to group barriers in your hierarchy; it costs nothing.
-
-### `offtrack_{Index}`
-
-Off-course detection reads CarX's per-wheel `surfaceType` and counts any wheel not on `Asphalt`. Nothing in the mod parses the `offtrack_` prefix.
-
-That means off-course currently follows **the surface material CarX assigns**, not your marker. If your run-off areas are authored as asphalt, they will not register as off-course regardless of the marker. Worth checking on your map before relying on the off-course DQ.
-
-> Both markers remain in the SDK. If you want the mod to honour them, that's a mod-side change — raise it rather than assuming the marker is doing something.
 
 ---
 

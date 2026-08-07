@@ -84,13 +84,23 @@ Each panel needs its **own material instance** with **Emission enabled** and the
 
 ---
 
-## `UDSMWallMarker` · `UDSMOffTrackMarker`
+## `UDSMOffTrackMarker`
 
-Name their GameObjects `wall_{Index}` and `offtrack_{Index}`.
+Names its GameObject `offtrack_{Index}`. The index only keeps names unique — the mod reads the prefix.
 
-**Neither currently drives any mod behaviour.** Wall contact comes from CarX's collision events on the car, and off-course reads CarX's per-wheel surface type. Both markers are harmless to place and useful for organising your hierarchy, but placing them does not change scoring.
+Marks a surface as off-course. Any wheel inside the mesh counts as off-surface in addition to CarX's per-wheel surface type, which is what makes it possible to punish running wide onto a **paved** run-off. Surface type alone reports asphalt there and never fires.
 
-See [naming contract](naming-contract.md#names-the-mod-no-longer-acts-on) for the detail, including the practical consequence: off-course follows your **surface materials**, so run-off areas authored as asphalt will not trigger it.
+You don't need these over grass, dirt or gravel — surface type already handles those. Place them where the material won't say what the rules say.
+
+See [naming contract](naming-contract.md#offtrack) for placement detail and the config kill switch.
+
+---
+
+## `UDSMWallMarker`
+
+Names its GameObject `wall_{Index}`.
+
+**Drives no mod behaviour.** Wall contact comes from CarX's collision events on the car, so any solid barrier already registers taps and impact DQs. Harmless to place and useful for organising your hierarchy, but placing it does not change scoring. See [naming contract](naming-contract.md#wall).
 
 ---
 

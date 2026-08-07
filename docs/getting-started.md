@@ -90,5 +90,5 @@ Common ones:
 | No zones scoring | `[UDSM Line] Zone scan for: …  (0 zones)` — names didn't match |
 | A driver's runs never appear | Are you actually host? Check the role line in the panel header |
 | Scoreboard empty on a client | Host role, and whether the client shows in the host's Roles tab |
-| Off-course never fires | Run-off is probably authored as asphalt — see the [naming contract](reference/naming-contract.md#names-the-mod-no-longer-acts-on) |
+| Off-course never fires | Run-off is paved, so surface type reads asphalt. Cover it with [`offtrack_` meshes](reference/naming-contract.md#offtrack) |
 | Start lights dark | Shared material, or `_EMISSION` not enabled |

@@ -6,9 +6,19 @@
 using UnityEngine;
 
 /// <summary>
-/// Marks a mesh as off-track. Any wheel that comes to rest on a
-/// surface whose GameObject name starts with "offtrack" counts as
-/// off-surface for DQ / one-wheel-off deductions.
+/// Marks a mesh as off-track. Any wheel inside it counts as off-surface for
+/// the off-course DQ and the one-wheel-off deduction.
+///
+/// WHEN YOU NEED THIS: only where the surface material can't say it itself.
+/// The mod reads CarX's per-wheel surface type and treats anything that isn't
+/// Asphalt as off, so grass, dirt, sand and gravel already work unmarked. A
+/// PAVED run-off does not — CarX reports asphalt under every wheel there, so
+/// without a marker a driver can run arbitrarily wide onto an escape road and
+/// never trigger off-course. Cover those areas with this.
+///
+/// Containment is tested against the mesh in its own local space, so a rotated
+/// mesh marks the strip you modelled rather than a world-aligned box around it.
+/// The mesh needs readable geometry — the mod logs and skips it otherwise.
 ///
 /// IMPORTANT: place on its OWN GameObject (the mesh you want to mark
 /// as off-track). Do NOT combine with UDSMDriftZoneSegment / UDSMDriftZoneAngleRange —

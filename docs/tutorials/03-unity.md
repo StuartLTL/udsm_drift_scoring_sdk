@@ -108,11 +108,13 @@ HDRP scenes usually need the emission intensity raised — that's `StartLightsEm
 
 ## Walls and off-track
 
-Neither needs marking. See [naming contract](../reference/naming-contract.md#names-the-mod-no-longer-acts-on) for why.
+Walls need no marking. See [naming contract](../reference/naming-contract.md#wall) for why.
 
 Wall contact comes from CarX's own collision events, so any solid barrier already registers taps and impact DQs.
 
-Off-course reads CarX's per-wheel surface type and counts anything that isn't asphalt. **Check your run-off areas are not authored as asphalt**, or the off-course DQ won't fire there. This is worth testing explicitly.
+Off-course reads CarX's per-wheel surface type and counts anything that isn't asphalt, so grass, dirt and gravel need no marking either.
+
+**Paved run-off is the exception.** CarX reports asphalt under every wheel there, so surface type can never flag it and a driver can run as wide as they like. Cover those areas with meshes carrying **`UDSMOffTrackMarker`** (`offtrack_{Index}`) — wheels inside one count as off-surface regardless of the material. Escape roads, paved infield and tarmac run-off all want this.
 
 ---
 
@@ -125,7 +127,7 @@ Off-course reads CarX's per-wheel surface type and counts anything that isn't as
 - [ ] `run_finish_line` and `initiation_line` span the full track width
 - [ ] Start light panels each have their own emissive material
 - [ ] Zone materials are transparent and renderers are enabled
-- [ ] Run-off surfaces are not asphalt
+- [ ] Run-off is either non-asphalt material, or covered by `offtrack_` meshes
 
 ---
 

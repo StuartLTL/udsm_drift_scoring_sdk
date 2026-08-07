@@ -71,7 +71,7 @@ Checks worth doing deliberately, in this order. Each one isolates a different pa
 
 **4. Overshoot.** Aim past the deepest band. You should see an `Overshoot` deduction in the deductions panel. If not, the strip has a gap the car passed through.
 
-**5. Off-course.** Put two wheels into the run-off and hold. You should be DQ'd after 0.15 s. **If nothing happens, your run-off is authored as asphalt** — off-course reads CarX's per-wheel surface type, not a marker.
+**5. Off-course.** Put two wheels into the run-off and hold. You should be DQ'd after 0.15 s. If nothing happens, the run-off is authored as asphalt and has no `offtrack_` mesh over it — test each run-off area separately, since one may be grass and another tarmac.
 
 **6. Finish line.** Cross it during a run. The run should end without you having to do anything else.
 

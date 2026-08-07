@@ -20,6 +20,19 @@ All thresholds below are `config.json` defaults and are tunable per event.
 | **Car reset** | Driver resets or respawns mid-run | — |
 | **Manual** | Staff-issued, live or retroactive | — |
 
+### Off-course — what counts as "off surface"
+
+Two signals, combined per wheel:
+
+1. **CarX's per-wheel surface type.** Any wheel not on `Asphalt` is off. This covers grass, dirt, sand, gravel, snow and ice with no authoring at all.
+2. **`offtrack_` meshes you place.** Any wheel inside one is off, whatever the material underneath says.
+
+The second exists because the first cannot see a **paved** run-off. CarX reports asphalt under every wheel on tarmac, so without a marker a driver can run as wide as they like across an escape road and never trigger anything. If off-course isn't firing where you expect, that's almost always why — see the [naming contract](naming-contract.md#offtrack).
+
+Because the two are merged per wheel rather than as counts, one wheel on grass plus a different wheel on a marked paved run-off is **two** wheels off, and DQs.
+
+`RespectOffTrackMeshes: false` disables the mesh half if a map's markers are placed badly enough to punish drivers who are still on course.
+
 ### Straightening — which angle it uses
 
 This one is worth understanding because it behaves differently from the score.
