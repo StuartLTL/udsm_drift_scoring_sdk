@@ -10,7 +10,7 @@ CHAPPiE is a KSL mod, so you need the KSL stack first.
 
 1. Switch CarX to the **`[moddable]`** Steam beta branch.
 2. Install **BepInEx x64**, then **Kino**, then **KSL**, then the **KSL.CarX** extension.
-3. Drop `CHAPPiE.ksm` into `{CarX install}/kino/mods/`.
+3. [Download `CHAPPiE.ksm`](download.md) and drop it into `{CarX install}/kino/mods/`.
 4. Launch. CHAPPiE appears in the KSL mod list.
 
 Everyone in a lobby should run the **same build**. Mixed versions can leave a driver invisible to the host's roster, which means their runs won't be tracked and the one-car-at-a-time lock won't cover them. The Roles panel flags version mismatches.

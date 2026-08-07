@@ -12,6 +12,7 @@ You don't script anything. You split a zone into a grid of invisible meshes, nam
 
 | | |
 |---|---|
+| ⬇️ **[Download](download.md)** | The mod and the track SDK, straight from here. |
 | 🏁 **[Getting started](getting-started.md)** | Install the mod, assign staff, run a session. |
 | 🛠️ **[Track authoring](tutorials/)** | The full pipeline: design the grid, build it in Maya or Blender, set it up in Unity, export through Kino. |
 | 📐 **[Naming contract](reference/naming-contract.md)** | Every GameObject name the mod reads. The actual interface. |
@@ -45,7 +46,11 @@ The practical consequence, and the thing worth internalising before you start: *
 
 CHAPPiE is in active development and used for real events. The naming contract is additive-only — a map authored against it keeps working across mod updates.
 
+**[Download the mod and SDK](download.md)** — both served from this site, with a build date and SHA-256 for each.
+
+If you'd rather pull from source:
+
 - **SDK + these docs** — [udsm_drift_scoring_sdk](https://github.com/StuartLTL/udsm_drift_scoring_sdk)
-- **Releases** — [udsm_drift_scoring_public](https://github.com/StuartLTL/udsm_drift_scoring_public)
+- **Release binaries** — [udsm_drift_scoring_public](https://github.com/StuartLTL/udsm_drift_scoring_public)
 
 Both are mirrored automatically from the private development repo, so what you see here always matches a real build.

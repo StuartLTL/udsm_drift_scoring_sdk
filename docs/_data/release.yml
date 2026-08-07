@@ -1,0 +1,13 @@
+# Hand-maintained release metadata for the download page.
+#
+# Bump mod_version when you commit a freshly signed releases/UDSMDriftScoring.ksm
+# to the private repo, and only then.
+#
+# Everything else shown on /download - file size, SHA-256, build date - is computed
+# by the publish workflow from the binary itself, so it cannot drift out of sync.
+# This field is the one thing that can, because a .ksm is an opaque signed
+# container with no readable version string inside it. Nothing can verify it.
+#
+# If you are not certain which build is committed, leave it empty. The page then
+# shows the build date on its own instead of claiming a version it cannot check.
+mod_version: ""
