@@ -10,4 +10,4 @@
 #
 # If you are not certain which build is committed, leave it empty. The page then
 # shows the build date on its own instead of claiming a version it cannot check.
-mod_version: ""
+mod_version: "1.9.3"
