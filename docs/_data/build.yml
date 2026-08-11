@@ -2,10 +2,10 @@
 # Every value here is measured from the published bytes, so it cannot
 # drift. The mod's version number is the one thing that can, and lives
 # in _data/release.yml because a signed .ksm carries no readable version.
-mod_date: "2026-08-09"
-mod_size: "443 KB"
-mod_sha256: "a31277b4b6dc910d3706ecb1fa29c1a3daf3ebe201f99ddd9c17315a7a11814b"
+mod_date: "2026-08-11"
+mod_size: "980 KB"
+mod_sha256: "885964b72504a807c73f7feb3e4937326f6d130c6de6b0f555cb553ef3601fff"
 sdk_date: "2026-08-07"
 sdk_size: "11 KB"
 sdk_sha256: "6df454c810cdfb2c6ab4cb892f2b38aa4e0f3930ac61457ab13084674635eb9b"
-source_commit: "46777ce"
+source_commit: "9538df2"
