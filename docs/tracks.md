@@ -46,7 +46,9 @@ The check is honest about partial setups too. A track with zones but no `run_sta
 
 That's it. No account, no forms. The mod sends the report straight through and it appears here once it's been looked over.
 
-If submissions are switched off or the send fails, **Copy track report** puts the same summary on your clipboard — paste it into an issue on [udsm_drift_scoring_sdk](https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues), or send a pull request adding it to `docs/_data/tracks.yml` directly.
+If submissions are switched off or the send fails, **Copy track report** puts the same summary on your clipboard — paste it into an issue on [udsm_drift_scoring_sdk](https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues).
+
+> **Don't send a pull request.** Both public repos are mirrors, rebuilt from a private one on every release. A merged PR would be overwritten by the next sync and quietly lost — through no fault of yours. An issue is the right route; issues aren't touched by the mirror.
 
 The report is generated from what the mod actually detected on the loaded map, so an entry can't claim geometry the track doesn't have.
 

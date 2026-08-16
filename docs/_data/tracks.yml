@@ -29,10 +29,16 @@
 # recognise a track you already have, and `where` covers the rest in plain
 # words.
 #
-# To add one, open the KSL menu on the loaded track, go to Home, press
-# "Copy track report", and paste it into an issue at
-# https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues — or send a pull
-# request adding the entry directly.
+# Players submit with the in-game button: KSL menu -> CHAPPiE -> Tracks ->
+# "Submit this track", which posts the report to Discord. Entries are added
+# here by hand from those.
+#
+# The manual fallback is an issue at
+# https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues.
+#
+# NOT a pull request. Both public repos are mirrors, force-rebuilt from this
+# private one on every release, so a merged PR is overwritten by the next sync
+# and lost. Only edits made here survive.
 #
 # Example of a complete entry:
 #
