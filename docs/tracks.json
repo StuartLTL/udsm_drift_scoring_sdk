@@ -13,5 +13,11 @@ layout: null
   layout: null keeps the site's HTML wrapper off it. _config.yml applies the
   default layout to every path, so this has to opt out explicitly or the JSON
   arrives wrapped in a full page.
+
+  The empty case is written out literally rather than filtered. Liquid's
+  `default` treats an empty array as falsy and substitutes Liquid's `empty`
+  object, which jsonify renders as "" — so an empty list produced
+  {"tracks":""}, a string where consumers expect an array, and parsing failed.
 {% endcomment %}
-{"generated":"{{ site.time | date_to_xmlschema }}","tracks":{{ site.data.tracks.tracks | default: empty | jsonify }}}
+{%- assign t = site.data.tracks.tracks -%}
+{"generated":"{{ site.time | date_to_xmlschema }}","tracks":{% if t and t.size > 0 %}{{ t | jsonify }}{% else %}[]{% endif %}}
