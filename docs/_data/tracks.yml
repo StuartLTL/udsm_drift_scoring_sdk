@@ -1,0 +1,49 @@
+# Tracks with CHAPPiE scoring geometry.
+#
+# This file IS the public list at https://chappie.online/tracks — the page is
+# generated from it, so adding an entry here is all it takes.
+#
+# Hand-maintained on purpose. The mod can tell you whether the map currently
+# loaded is CHAPPiE-ready, but it has no way to know a track exists until
+# somebody loads it, and no way to publish that back. A short curated list that
+# is actually correct beats an auto-generated one that can't be verified.
+#
+# Fields
+#   scene     required. The scene name, exactly as the mod reports it. This is
+#             the identifier that matters — it is what a driver can match
+#             against a track they already have, and the mod fills it in.
+#   name      optional. Human-readable name, if it differs from the scene.
+#   author    optional but wanted. Who built it.
+#   where     optional. How to get hold of it in words — "CarX workshop",
+#             "Kino Discord", "bundled with KN_Base", "ask the author".
+#   url       optional. A direct link IF one exists.
+#   zones     number of scoring zones, from the in-game report.
+#   lines     which run lines it has: start / finish / initiation.
+#   layout    free text — "technical", "sweeper", "touge", "circuit"…
+#   notes     optional. Anything a judge should know before running an event.
+#   verified  version of CHAPPiE the entry was last checked against.
+#
+# url is deliberately NOT required. Most CarX tracks are passed around on
+# Discord or shared privately and simply have no stable link — insisting on one
+# would keep real, working tracks off the list. The scene name is enough to
+# recognise a track you already have, and `where` covers the rest in plain
+# words.
+#
+# To add one, open the KSL menu on the loaded track, go to Home, press
+# "Copy track report", and paste it into an issue at
+# https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues — or send a pull
+# request adding the entry directly.
+#
+# Example of a complete entry:
+#
+#   - scene: ebisu_minami_v2
+#     name: Ebisu Minami
+#     author: Someone
+#     where: Kino Discord, #track-releases
+#     zones: 8
+#     lines: start, finish, initiation
+#     layout: technical
+#     notes: Outer clip in zone 3 is tight — expect wall taps.
+#     verified: "1.9.19"
+
+tracks: []
