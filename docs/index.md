@@ -14,7 +14,6 @@ You don't script anything. You split a zone into a grid of invisible meshes, nam
 |---|---|
 | ⬇️ **[Download](download.md)** | The mod and the track SDK, straight from here. |
 | 🏁 **[Getting started](getting-started.md)** | Install the mod, assign staff, run a session. |
-| 🗺️ **[Tracks](tracks.md)** | Maps that already carry CHAPPiE scoring geometry, and how to get yours listed. |
 | 🛠️ **[Track authoring](tutorials/)** | The full pipeline: design the grid, build it in Maya or Blender, set it up in Unity, export through Kino. |
 | 📐 **[Naming contract](reference/naming-contract.md)** | Every GameObject name the mod reads. The actual interface. |
 | 🧮 **[Scoring model](reference/scoring-model.md)** | How a run becomes a number. |
