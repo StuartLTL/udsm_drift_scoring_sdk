@@ -16,9 +16,17 @@ using UnityEngine;
 /// without a marker a driver can run arbitrarily wide onto an escape road and
 /// never trigger off-course. Cover those areas with this.
 ///
-/// Containment is tested against the mesh in its own local space, so a rotated
-/// mesh marks the strip you modelled rather than a world-aligned box around it.
-/// The mesh needs readable geometry — the mod logs and skips it otherwise.
+/// GIVE IT A COLLIDER. Detection asks the physics system what each wheel is
+/// standing on and checks whether that surface belongs to an offtrack_ object,
+/// so a marker with a collider works whatever shape it is — and it only counts
+/// the surface actually under the wheel, not everything below it, so a ground
+/// plane running under the circuit doesn't flag the whole track.
+///
+/// Without a collider the mod falls back to the mesh triangles, which needs
+/// Read/Write Enabled on the model import. With neither, the marker is IGNORED
+/// and says so in debug.log. It is deliberately never approximated by its
+/// bounding box: run-off wraps around the racing line, so a box drawn round it
+/// contains the line, and honouring that disqualifies every driver on every run.
 ///
 /// IMPORTANT: place on its OWN GameObject (the mesh you want to mark
 /// as off-track). Do NOT combine with UDSMDriftZoneSegment / UDSMDriftZoneAngleRange —
