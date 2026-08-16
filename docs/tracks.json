@@ -1,0 +1,17 @@
+---
+layout: null
+---
+{% comment %}
+  Machine-readable copy of the track list, served at chappie.online/tracks.json
+  for the mod's Tracks tab to fetch.
+
+  This exists because Jekyll consumes _data/tracks.yml at build time and never
+  serves it — there is no URL for the raw file. Generating from the same data
+  means the page a human reads and the endpoint the mod reads can never
+  disagree; adding a track to _data/tracks.yml updates both.
+
+  layout: null keeps the site's HTML wrapper off it. _config.yml applies the
+  default layout to every path, so this has to opt out explicitly or the JSON
+  arrives wrapped in a full page.
+{% endcomment %}
+{"generated":"{{ site.time | date_to_xmlschema }}","tracks":{{ site.data.tracks.tracks | default: empty | jsonify }}}
