@@ -41,11 +41,12 @@ The check is honest about partial setups too. A track with zones but no `run_sta
 
 ## Getting a track listed
 
-1. Load the track and open **KSL → CHAPPiE → Home**.
-2. Press **Copy track report**. That puts a filled-in summary on your clipboard — zone count, run lines, CHAPPiE version.
-3. Open an issue on [udsm_drift_scoring_sdk](https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues), paste it in, and say who made the track and roughly where to find it.
+1. Load the track and open **KSL → CHAPPiE → Tracks**.
+2. Press **Submit this track**.
 
-Or skip the issue and send a pull request adding your entry to `docs/_data/tracks.yml` directly.
+That's it. No account, no forms. The mod sends the report straight through and it appears here once it's been looked over.
+
+If submissions are switched off or the send fails, **Copy track report** puts the same summary on your clipboard — paste it into an issue on [udsm_drift_scoring_sdk](https://github.com/StuartLTL/udsm_drift_scoring_sdk/issues), or send a pull request adding it to `docs/_data/tracks.yml` directly.
 
 The report is generated from what the mod actually detected on the loaded map, so an entry can't claim geometry the track doesn't have.
 

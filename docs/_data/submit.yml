@@ -1,0 +1,26 @@
+# Endpoint the mod POSTs track submissions to.
+#
+# Paste a Discord webhook URL here and every installed copy of CHAPPiE gains a
+# working "Submit this track" button within a couple of minutes — the mod reads
+# this through chappie.online/submit.json on launch, so nobody has to update.
+#
+# To create one: Discord → your server → Edit Channel → Integrations →
+# Webhooks → New Webhook → Copy Webhook URL. Point it at a channel only you and
+# your staff can see; submissions are raw player input.
+#
+# Leave it empty and submissions are OFF: the mod hides the button and falls
+# back to copy-and-paste, which is the current behaviour.
+#
+# ROTATION: if this ever gets abused, delete the webhook in Discord, make a new
+# one, replace the URL here and push. Old copies stop working immediately and
+# every player picks up the new endpoint on next launch. That is the reason
+# this lives on the site instead of inside the .ksm.
+#
+# Anyone who extracts this URL can post into that one channel. They cannot read
+# it, cannot touch the repo, and cannot reach anything else. Weigh that against
+# a GitHub token, which would hand over write access to both public repos.
+
+webhook: ""
+
+# Optional line shown in the mod above the Submit button.
+note: ""
